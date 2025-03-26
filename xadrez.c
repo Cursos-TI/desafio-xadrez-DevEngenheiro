@@ -8,9 +8,10 @@ int main() {
     // Nível Novato - Movimentação das Peças
     
     // Constantes definindo o número de casas a serem movidas para cada peça
-    const int casasTorre = 5;    // Torre move 5 casas para a direita
-    const int casasBispo = 5;    // Bispo move 5 casas na diagonal (para cima e à direita)
-    const int casasRainha = 8;   // Rainha move 8 casas para a esquerda
+    int casasTorre = 5;    // Torre move 5 casas para a direita
+    int casasBispo = 5;    // Bispo move 5 casas na diagonal (para cima e à direita)
+    int casasRainha = 8;   // Rainha move 8 casas para a esquerda
+    int casasCavalo = 1;   // Cavalo move 3 casas em forma de L
 
     // Implementação de Movimentação do Bispo
     // --------------------------- Movimento do Bispo ---------------------------
@@ -35,7 +36,7 @@ int main() {
     printf("\n");
 
     // Implementação de Movimentação da Rainha
-        // --------------------------- Movimento da Rainha ---------------------------
+    // --------------------------- Movimento da Rainha ---------------------------
     // A Rainha se move em todas as direções. Aqui, simulamos um movimento de 8 casas para a esquerda.
     printf("Movimento da Rainha (8 casas para a esquerda):\n");
     int k = 1;
@@ -44,10 +45,24 @@ int main() {
         printf("Casa %d: Esquerda\n", k);
         k++; // Incrementa para simular a próxima casa
     } while (k <= casasRainha);
+    printf("\n");
     
     // Nível Aventureiro - Movimentação do Cavalo
     // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    
+    // --------------------------- Movimento do Cavalo ---------------------------
+    // O Cavalo se move em L. Neste exemplo, ele se move 2 casas para baixo e 1 para a esquerda.
+    printf("Movimento do Cavalo (2 casas para baixo e 1 casa para a esquerda, formando o L):\n");
+    while (casasCavalo--)
+    {
+        for (int m = 1; m <= 2; m++) {
+        // Simula as 2 casas para baixo. Para cada casa, imprime a direção "Baixo"
+        printf("Casa %d: Baixo\n", m);
+        }
+    // Depois das duas casas para baixo, imprime a direção "Esquerda"
+    printf("Casa %d: Esquerda\n", casasCavalo + 3);
+    }
+    printf("\n");
 
     // Nível Mestre - Funções Recursivas e Loops Aninhados
     // Sugestão: Substitua as movimentações das peças por funções recursivas.
